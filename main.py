@@ -50,3 +50,41 @@ def cyclops_battle(stick):
     return complete
 
 # game function
+def game():
+# Get global variables
+  global inventory
+  inventory = {"torch": 2}
+  # Play game
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+  print("Welcome to the Cavern Adventure!")
+  print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+  time.sleep(3)
+  print ("You enter a dark cavern out of curiosity. It is dark and you can only make out a small stick on the floor.")
+  
+  # Stick taken
+  if print_output("Do you take it?"):
+  num = random.random()
+  if num < 0.8:
+  print("You have taken the stick!")
+  time.sleep(2)
+  inventory["stick"] = 1
+  else:
+  print("Oh no! The stick was actually a snake.")
+  time.sleep(1)
+  complete = 0
+  return complete
+  # Stick not taken
+  else:
+  print("You did not take the stick")
+  print ("As you proceed further into the cave, you see a large glowing object")
+  # Approach cyclops
+  if print_output("Do you approach the object?"):
+  print ("You approach the object...")
+  time.sleep(2)
+  print ("As you draw closer, you begin to make out the object as an eye!")
+  time.sleep(1)
+  print ("The eye belongs to a giant cyclops!")
+  # Fight cyclops
+  if print_output("Do you try to fight it?"):
+  # With stick
+  if "stick" in list(inventory.keys()):
